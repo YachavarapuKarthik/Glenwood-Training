@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" 
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:style>
+        .bodyStyle {
+            height: 2000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        }
+
+        .card {
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 50px;
+        }
+
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            backdrop-filter: blur(30px);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .full-nav {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(30px);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .loginButton {
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .loginButton:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel addStyleNames="{style.bodyStyle}">
+        <h2>Login Form</h2>
+        <g:FormPanel ui:field="loginForm" method="post" addStyleNames="{style.glassmorphism}">
+            <g:FlowPanel>
+                <g:Label for="username">Username:</g:Label>
+                <g:TextBox ui:field="username" name="username" required="true" addStyleNames="{style.card}" />
+            </g:FlowPanel>
+            
+            <g:FlowPanel>
+                <g:Label for="password">Password:</g:Label>
+                <g:PasswordTextBox ui:field="password" name="password" required="true" addStyleNames="{style.card}" />
+            </g:FlowPanel>
+            
+            <g:Button type="submit" addStyleNames="{style.loginButton}">Login</g:Button>
+        </g:FormPanel>
+    </
+
